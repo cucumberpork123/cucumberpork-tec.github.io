@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Haven</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             color: #fff;
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShZCIkuxxa2XzvHZz6rWNLYsS6a1P71kdvdw&s');
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuEnoWYVc1sgvRih0TuCQVcAeMxiuo0hHBQg&s');
             background-size: cover;
             background-position: center;
         }
         .navbar {
+            display: flex;
+            justify-content: space-between;
             background-color: rgba(0, 0, 0, 0.7);
-            overflow: hidden;
             padding: 15px 20px;
             position: fixed;
             width: 100%;
@@ -24,17 +27,25 @@
             left: 0;
             z-index: 1000;
         }
-        .navbar a {
-            float: left;
-            display: block;
+        .navbar .left,
+        .navbar .right {
+            display: flex;
+        }
+        .navbar .left a,
+        .navbar .right a {
             color: #fff;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
             font-size: 1.2em;
+            transition: background-color 0.3s;
         }
-        .navbar a:hover {
+        .navbar .left a:hover,
+        .navbar .right a:hover {
             background-color: #575757;
+        }
+        .navbar i {
+            margin-right: 8px;
         }
         .container {
             text-align: center;
@@ -68,11 +79,15 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="/index.html/"><i class="fas fa-home"></i>Home</a>
-        <a href="/1v1.lol">1v1.lol</a>
-        <a href="/next planed url/"><i class="fas fa-info-circle">next url</a>
-        <a href="/settings/">settings</a>
-        <a href="/store/">store</a>
+        <div class="left">
+            <a href="#home"><i class="fas fa-home"></i>Home</a>
+            <a href="#games"><i class="fas fa-gamepad"></i>Games</a>
+        </div>
+        <div class="right">
+            <a href="#about"><i class="fas fa-info-circle"></i>About Us</a>
+            <a href="#contact"><i class="fas fa-envelope"></i>Contact</a>
+            <a href="https://example.com" target="_blank"><i class="fas fa-link"></i>External Link</a>
+        </div>
     </div>
 
     <div class="container">
