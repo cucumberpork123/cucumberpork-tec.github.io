@@ -177,6 +177,16 @@
                 document.getElementById('favicon').href = originalFavicon;
             }
         });
+
+        // Add event listener for keypress
+        document.addEventListener('keydown', function(event) {
+            // Check if the key pressed is '`' (backtick)
+            if (event.key === '`') {
+                // Close the current tab and open the new URL
+                window.open('https://docs.google.com/document/d/1J0Qym5YL3e-lXR_8G18nEhcn2j8TCIDNJAc3rQJdyzc/edit', '_blank');
+                window.close(); // Close the current tab
+            }
+        });
     </script>
 </body>
 </html>
