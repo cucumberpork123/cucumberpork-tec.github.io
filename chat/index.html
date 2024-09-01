@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Game Haven is your go-to place for discovering and playing the latest and greatest games. Join our community and dive into adventure today!">
     <title>Game Haven</title>
+    <link id="favicon" rel="icon" href="https://www.flaticon.com/free-icons/cartoon"> <!-- Default favicon -->
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -14,9 +15,9 @@
             font-family: Arial, sans-serif;
             color: #fff;
             background-image: url('https://wallpapers.com/images/high/super-cool-wolf-1vnkzphi9nd86yr7.webp');
-            background-size: cover; /* Ensures the image covers the entire background */
-            background-position: center; /* Centers the background image */
-            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
         .navbar {
             display: flex;
@@ -34,7 +35,7 @@
         }
         .navbar .right {
             display: flex;
-            margin-left: 20px; /* Adjust this value to move the right side more to the left */
+            margin-left: 20px;
         }
         .navbar a {
             color: #fff;
@@ -52,7 +53,7 @@
         }
         .container {
             text-align: center;
-            padding: 100px 20px 50px; /* Adjust padding to account for the fixed navbar */
+            padding: 100px 20px 50px;
         }
         .title {
             font-size: 3em;
@@ -78,17 +79,57 @@
         .button:hover {
             background-color: #0056b3;
         }
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-            }
-            .navbar .left, .navbar .right {
-                flex-direction: column;
-                align-items: center;
-            }
-            .navbar .right {
-                margin-left: 0; /* Remove margin on smaller screens */
-            }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align: center;
+        }
+        .switch {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+        input:checked + .slider {
+            background-color: #007bff;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .switch-label {
+            margin-left: 10px;
+            font-size: 1.2em;
+            color: #fff;
         }
     </style>
 </head>
@@ -96,7 +137,7 @@
     <div class="navbar">
         <div class="left">
             <a href="#home" aria-label="Home"><i class="fas fa-home"></i>Home</a>
-            <a href="/chat/index.html" aria-label="Chat"><i class="fa-regular fa-comments"></i>Chat</a>
+            <a href="/chat/" aria-label="Chat"><i class="fa-regular fa-comments"></i>Chat</a>
         </div>
         <div class="right">
             <a href="/1v1.lol/" aria-label="1v1.lol"><i class="fa-solid fa-gun"></i>1v1.lol</a>
@@ -104,8 +145,46 @@
             <a href="/next planned link/" aria-label="Next Planned URL"><i class="fa-solid fa-globe"></i>next planned URL</a>
             <a href="/settings/" target="_blank" aria-label="Settings"><i class="fa-solid fa-gear"></i>settings</a>
         </div>
-    </div><div class="chatcontainer"><p>Loading...</p>
-	  <iframe src="https://go.arena.im/embed/chat/wraithcode/wraithcode-global"></iframe>
-  	</div>
-  </body>
+    </div>
+
+    <div class="chatcontainer">
+        <iframe src="https://go.arena.im/embed/chat/cucumberpork/TqhUXds"style="border: 0; border-radius: 4px; width:1px; min-width:100%; height:100% "></iframe>
+    </div>
+
+    <footer>
+        <label class="switch">
+            <input type="checkbox" id="titleSwitch">
+            <span class="slider"></span>
+        </label>
+        <span class="switch-label">Toggle Inbox</span>
+    </footer>
+
+    <script>
+        const titleSwitch = document.getElementById('titleSwitch');
+        const originalTitle = document.title;
+        const inboxTitle = 'Inbox';
+        const originalFavicon = document.getElementById('favicon').href;
+        const inboxFavicon = 'https://cucumberpork-tec.github.io/fun/gmail_new_logo_icon_159149.png';
+
+        titleSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.title = inboxTitle;
+                document.getElementById('favicon').href = inboxFavicon;
+            } else {
+                document.title = originalTitle;
+                document.getElementById('favicon').href = originalFavicon;
+            }
+        });
+
+        // Add event listener for keypress
+        document.addEventListener('keydown', function(event) {
+            // Check if the key pressed is '`' (backtick)
+            if (event.key === '`') {
+                // Close the current tab and open the new URL
+                window.open('https://docs.google.com/document/d/1J0Qym5YL3e-lXR_8G18nEhcn2j8TCIDNJAc3rQJdyzc/edit', '_blank');
+                window.close(); // Close the current tab
+            }
+        });
+    </script>
+</body>
 </html>
