@@ -3,78 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next URL</title>
+    <meta name="description" content="Game Haven is your go-to place for discovering and playing the latest and greatest games. Join our community and dive into adventure today!">
+    <title>Game Haven</title>
+    <link id="favicon" rel="icon" href="https://www.flaticon.com/free-icons/cartoon"> <!-- Default favicon -->
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-        }
-        header {
-            background-color: #000;
             color: #fff;
-            padding: 1rem 0;
-            text-align: center;
+            background-image: url('https://wallpapers.com/images/high/super-cool-wolf-1vnkzphi9nd86yr7.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
-        nav {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            background: #000;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
-        nav ul {
-            padding: 0;
-            margin: 0;
-            text-align: center;
+        .navbar .left {
+            display: flex;
         }
-        nav ul li {
-            display: inline;
-            margin: 0;
+        .navbar .right {
+            display: flex;
+            margin-left: 20px;
         }
-        nav ul li a {
+        .navbar a {
             color: #fff;
+            text-align: center;
+            padding: 14px 16px;
             text-decoration: none;
-            padding: 1rem 1.5rem;
-            display: inline-block;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
         }
-        nav ul li a:hover {
-            background: #000;
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        .navbar i {
+            margin-right: 8px;
         }
         .container {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: auto;
+            text-align: center;
+            padding: 100px 20px 50px;
+        }
+        .title {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .description {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
         }
         footer {
-            background-color: #474747;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             width: 100%;
-        }
-        .hero {
-            background: #000;
-            color: #fff;
-            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
             text-align: center;
-            margin-bottom: 2rem;
         }
-        .hero h1 {
-            margin: 0;
-            font-size: 2.5rem;
+        .switch {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            height: 34px;
         }
-        .hero p {
-            font-size: 1.2rem;
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
         }
-        background-image: url(‘https://png.pngtree.com/thumb_back/fh260/background/20230706/pngtree-futuristic-triangle-3d-design-with-a-cool-edge-image_3808173.jpg’);
-        background-repeat: no-repeat;
-        color: #FFFFFF;
-}
-
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+        input:checked + .slider {
+            background-color: #007bff;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .switch-label {
+            margin-left: 10px;
+            font-size: 1.2em;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
-	
+    <div class="navbar">
+        <div class="left">
+            <a href="/index.html" aria-label="Home"><i class="fas fa-home"></i>Home</a>
+            <a href="/chat/" aria-label="Chat"><i class="fa-regular fa-comments"></i>Chat</a>
+        </div>
+        <div class="right">
+            <a href="/1v1.lol/" aria-label="1v1.lol"><i class="fa-solid fa-gun"></i>1v1.lol</a>
+            <a href="https://hello123998.w3spaces.com" target="_blank" aria-label="eglercraft"><i class="fa-sharp-duotone fa-solid fa-cube"></i>eglercraft</a>
+            <a href="/next planned link/" aria-label="Next Planned URL"><i class="fa-solid fa-globe"></i>next planned URL</a>
+            <a href="/settings/" target="_blank" aria-label="Settings"><i class="fa-solid fa-gear"></i>settings</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="title">our next planned URL</h1>
+	    <h2> https//:cucumberpork-tec123.github.io</h2>
+        <p class="description">in case this get blocked we will be on a diffrent link within a day if it is not updated within a day contact us</p>
+    </div>
+
+    <footer>
+        <label class="switch">
+            <input type="checkbox" id="titleSwitch">
+            <span class="slider"></span>
+        </label>
+        <span class="switch-label">Toggle Inbox</span>
+    </footer>
+
+    <script>
+        const titleSwitch = document.getElementById('titleSwitch');
+        const originalTitle = document.title;
+        const inboxTitle = 'Inbox';
+        const originalFavicon = document.getElementById('favicon').href;
+        const inboxFavicon = 'https://cucumberpork-tec.github.io/fun/gmail_new_logo_icon_159149.png';
+
+        titleSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.title = inboxTitle;
+                document.getElementById('favicon').href = inboxFavicon;
+            } else {
+                document.title = originalTitle;
+                document.getElementById('favicon').href = originalFavicon;
+            }
+        });
+
+        // Add event listener for keypress
+        document.addEventListener('keydown', function(event) {
+            // Check if the key pressed is '`' (backtick)
+            if (event.key === '`') {
+                // Close the current tab and open the new URL
+                window.open('https://docs.google.com/document/d/1J0Qym5YL3e-lXR_8G18nEhcn2j8TCIDNJAc3rQJdyzc/edit', '_blank');
+                window.close(); // Close the current tab
+            }
+        });
+    </script>
+</body>
+</html>
